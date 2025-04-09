@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8557dca7-ead4-43f3-9ca0-b435890b99dc" activeEnvironment="Default" name="Uniclinica-Medico" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a67d3d6b-44f3-4491-b7a8-35332b3c6241" wsaVersion="NONE" name="MedicoWSImpServiceSoapBinding" type="wsdl" bindingName="{http://uniclinica.uniclinica.unipar.br/}MedicoWSImpServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp?Wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp?Wsdl"><con:part><con:url>http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp?Wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="MedicoWSImpService" targetNamespace="http://uniclinica.uniclinica.unipar.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://uniclinica.uniclinica.unipar.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://interfaces.uniclinica.uniclinica.unipar.br/">
+  <wsdl:import location="http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp?wsdl=MedicoWS.wsdl" namespace="http://interfaces.uniclinica.uniclinica.unipar.br/"></wsdl:import>
+  <wsdl:binding name="MedicoWSImpServiceSoapBinding" type="ns1:MedicoWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="excluir">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="excluir">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="excluirResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NamingException">
+        <soap:fault name="NamingException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inserir">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="inserir">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="inserirResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="editar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="editarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MedicoWSImpService">
+    <wsdl:port binding="tns:MedicoWSImpServiceSoapBinding" name="MedicoWSImpPort">
+      <soap:address location="http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp?wsdl=MedicoWS.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="MedicoWS" targetNamespace="http://interfaces.uniclinica.uniclinica.unipar.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://interfaces.uniclinica.uniclinica.unipar.br/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://interfaces.uniclinica.uniclinica.unipar.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://interfaces.uniclinica.uniclinica.unipar.br/">
+      <xs:element name="editar" type="tns:editar"/>
+      <xs:element name="editarResponse" type="tns:editarResponse"/>
+      <xs:element name="excluir" type="tns:excluir"/>
+      <xs:element name="excluirResponse" type="tns:excluirResponse"/>
+      <xs:element name="inserir" type="tns:inserir"/>
+      <xs:element name="inserirResponse" type="tns:inserirResponse"/>
+      <xs:element name="listar" type="tns:listar"/>
+      <xs:element name="listarResponse" type="tns:listarResponse"/>
+      <xs:complexType name="excluir">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="excluirResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="inserir">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:medicoRegistroRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="medicoRegistroRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="crm" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="endereco" type="tns:endereco"/>
+          <xs:element minOccurs="0" name="especialidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="endereco">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bairro" type="xs:string"/>
+          <xs:element minOccurs="0" name="cep" type="xs:string"/>
+          <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="complemento" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="logradouro" type="xs:string"/>
+          <xs:element name="numero" type="xs:int"/>
+          <xs:element minOccurs="0" name="uf" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inserirResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:medico"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="medico">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="crm" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="endereco" type="tns:endereco"/>
+          <xs:element minOccurs="0" name="especialidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listar">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="listarResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:medico"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="arg1" type="tns:medicoAtualizarRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="medicoAtualizarRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="endereco" type="tns:endereco"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editarResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:medico"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BusinessException" type="tns:BusinessException"/>
+      <xs:complexType name="BusinessException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NamingException" type="tns:NamingException"/>
+      <xs:complexType name="NamingException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="resolvedObj" type="xs:anyType"/>
+          <xs:element minOccurs="0" name="explanation" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SQLException" type="tns:SQLException"/>
+      <xs:complexType name="SQLException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+          <xs:element minOccurs="0" name="sQLState" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="excluir">
+    <wsdl:part element="ns1:excluir" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BusinessException">
+    <wsdl:part element="ns1:BusinessException" name="BusinessException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserir">
+    <wsdl:part element="ns1:inserir" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listar">
+    <wsdl:part element="ns1:listar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="excluirResponse">
+    <wsdl:part element="ns1:excluirResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="editar">
+    <wsdl:part element="ns1:editar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="editarResponse">
+    <wsdl:part element="ns1:editarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SQLException">
+    <wsdl:part element="ns1:SQLException" name="SQLException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NamingException">
+    <wsdl:part element="ns1:NamingException" name="NamingException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserirResponse">
+    <wsdl:part element="ns1:inserirResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarResponse">
+    <wsdl:part element="ns1:listarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MedicoWS">
+    <wsdl:operation name="excluir">
+      <wsdl:input message="ns1:excluir" name="excluir"></wsdl:input>
+      <wsdl:output message="ns1:excluirResponse" name="excluirResponse"></wsdl:output>
+      <wsdl:fault message="ns1:BusinessException" name="BusinessException"></wsdl:fault>
+      <wsdl:fault message="ns1:SQLException" name="SQLException"></wsdl:fault>
+      <wsdl:fault message="ns1:NamingException" name="NamingException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inserir">
+      <wsdl:input message="ns1:inserir" name="inserir"></wsdl:input>
+      <wsdl:output message="ns1:inserirResponse" name="inserirResponse"></wsdl:output>
+      <wsdl:fault message="ns1:BusinessException" name="BusinessException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listar">
+      <wsdl:input message="ns1:listar" name="listar"></wsdl:input>
+      <wsdl:output message="ns1:listarResponse" name="listarResponse"></wsdl:output>
+      <wsdl:fault message="ns1:BusinessException" name="BusinessException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <wsdl:input message="ns1:editar" name="editar"></wsdl:input>
+      <wsdl:output message="ns1:editarResponse" name="editarResponse"></wsdl:output>
+      <wsdl:fault message="ns1:BusinessException" name="BusinessException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp</con:endpoint></con:endpoints><con:operation id="51995465-83d0-4aa6-a867-808eb94c355f" isOneWay="false" action="" name="editar" bindingOperationName="editar" type="Request-Response" outputName="editarResponse" inputName="editar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6d1f3b17-0139-45e8-b7a1-683359de43dc" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.uniclinica.uniclinica.unipar.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:editar>\r
+         <!--Optional:-->\r
+         <id>4</id>\r
+         <!--Optional:-->\r
+         <arg1>\r
+            <!--Optional:-->\r
+            <endereco>\r
+               <!--Optional:-->\r
+               <bairro>JD La Salle</bairro>\r
+               <!--Optional:-->\r
+               <cep>85802-000</cep>\r
+               <!--Optional:-->\r
+               <cidade>Toledo</cidade>\r
+               <!--Optional:-->\r
+               <complemento>Apto 302</complemento>\r
+               <!--Optional:-->\r
+               <id>17</id>\r
+               <!--Optional:-->\r
+               <logradouro>Rua das Amazonas</logradouro>\r
+               <numero>124</numero>\r
+               <!--Optional:-->\r
+               <uf>PR</uf>\r
+            </endereco>\r
+            <!--Optional:-->\r
+            <nome>Moisés</nome>\r
+            <!--Optional:-->\r
+            <telefone>45998050809</telefone>\r
+         </arg1>\r
+      </int:editar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://uniclinica.uniclinica.unipar.br/MedicoWS/editar"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="03a490f0-e97f-4b53-9402-82b178cb50dc" isOneWay="false" action="" name="excluir" bindingOperationName="excluir" type="Request-Response" outputName="excluirResponse" inputName="excluir" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7035fadd-5fcb-4583-b3bd-f72adcd95a92" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.uniclinica.uniclinica.unipar.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:excluir>\r
+         <!--Optional:-->\r
+         <arg0>3</arg0>\r
+      </int:excluir>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://uniclinica.uniclinica.unipar.br/MedicoWS/excluir"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b425fb84-5958-45e8-9ffa-aab71199894b" isOneWay="false" action="" name="inserir" bindingOperationName="inserir" type="Request-Response" outputName="inserirResponse" inputName="inserir" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="09d9af53-82c5-4c5d-ae7a-995eafce74c3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.uniclinica.uniclinica.unipar.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:inserir>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <crm>123458/PR</crm>\r
+            <!--Optional:-->\r
+            <email>medicotesteOutro@gmail.com</email>\r
+            <!--Optional:-->\r
+            <endereco>\r
+               <!--Optional:-->\r
+               <bairro>Centro</bairro>\r
+               <!--Optional:-->\r
+               <cep>85802-000</cep>\r
+               <!--Optional:-->\r
+               <cidade>Cascavel</cidade>\r
+               <!--Optional:-->\r
+               <complemento>Apto 302</complemento>\r
+               <!--Optional:-->\r
+               <id></id>\r
+               <!--Optional:-->\r
+               <logradouro>Rua das Amazonas</logradouro>\r
+               <numero>124</numero>\r
+               <!--Optional:-->\r
+               <uf>PR</uf>\r
+            </endereco>\r
+            <!--Optional:-->\r
+            <especialidade>Ginecologia</especialidade>\r
+            <!--Optional:-->\r
+            <nome>Moisés</nome>\r
+            <!--Optional:-->\r
+            <telefone>4599999-9998</telefone>\r
+         </arg0>\r
+      </int:inserir>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://uniclinica.uniclinica.unipar.br/MedicoWS/inserir"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3c53f824-a6bd-4bc9-aa6f-7dac49a549d1" isOneWay="false" action="" name="listar" bindingOperationName="listar" type="Request-Response" outputName="listarResponse" inputName="listar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fd4a759e-0203-4f33-9cd2-bb68f8ed209c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Uniclinica-1.0-SNAPSHOT/MedicoWSImp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://interfaces.uniclinica.uniclinica.unipar.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <int:listar/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://uniclinica.uniclinica.unipar.br/MedicoWS/listar"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
